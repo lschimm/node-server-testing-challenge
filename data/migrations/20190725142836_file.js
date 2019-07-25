@@ -1,4 +1,4 @@
-exports.up = function(knex) {
+exports.up = function(knex, Promise) {
   return knex.schema.createTable("pokemon", tbl => {
     tbl.increments();
 
@@ -6,7 +6,7 @@ exports.up = function(knex) {
   });
 };
 
-exports.down = function(knex) {
-  //undo the opperation above
+exports.down = function(knex, Promise) {
+  // undo the operation in up
   return knex.schema.dropTableIfExists("pokemon");
 };
