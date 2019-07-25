@@ -2,7 +2,7 @@ const express = require("express");
 
 const Pokemon = require("../pokemon/pokemon-model.js");
 
-const server = expresss();
+const server = express();
 
 server.use(express.json());
 

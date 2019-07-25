@@ -19,6 +19,7 @@ module.exports = {
     connection: {
       filename: "./data/testing.bd3"
     },
+    useNullAsDefault: true,
     migrations: {
       directory: "./data/migrations"
     },

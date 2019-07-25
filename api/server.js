@@ -19,16 +19,16 @@ server.get("/pokemon", (req, res) => {
     });
 });
 
-// server.post("/pokemon", (req, res) => {
-//   const poke = req.body;
-//   //   console.log("poke", poke);
-//   Pokemon.insert(poke)
-//     .then(mon => {
-//       res.status(201).json(mon);
-//     })
-//     .catch(error => {
-//       res.status(500).json({ message: "cannot add that pokemon" });
-//     });
-// });
+server.post("/pokemon", async (req, res) => {
+  const poke = req.body;
+  //   console.log("poke", poke);
+  await Pokemon.insert(poke)
+    .then(mon => {
+      res.status(201).json(mon);
+    })
+    .catch(error => {
+      res.status(500).json({ message: "cannot add that pokemon" });
+    });
+});
 
 module.exports = server;
